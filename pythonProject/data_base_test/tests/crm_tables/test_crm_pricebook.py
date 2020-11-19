@@ -15,7 +15,7 @@ class price_book_Test:
 
     @staticmethod
     def test_crm_price_book_ecommerce_flag(get_data_from_dwh_nl_pricebook, get_data_from_price_book, data_config):
-        print("fsdf")
+
         crm_ecommerce_flag_df = get_data_from_price_book[['price_book_key', 'ecommerce_flag']]
         dwh_nl_ecommerce_flag_df = get_data_from_dwh_nl_pricebook[['price_book_key', 'ecommerce_flag']]
         conditions = [crm_ecommerce_flag_df['ecommerce_flag'] ==True,
