@@ -1,6 +1,6 @@
 
-# import os
-# RELEVANCE_DATE=os.environ.get('RELEVANCE_DATE')
+import os
+RELEVANCE_DATE = os.environ.get('RELEVANCE_DATE')
 DWH_NL_CONTACT = '''SELECT * from dwh_nl.contact'''
 SRC_DATA = '''select id as payment_id,total_amount,Fee as charged_amount,tenant_name,crm_owner as payment_crm_owner,
 RecordCreationTimestamp,payment_method as provider_name from dwh_src.src_SyncOrderRelationInput_payments_LMS '''
@@ -13,12 +13,17 @@ ERP_TAX_RATE = '''select erp_company,from_date as tax_rate_from_date,to_date as 
 dwh_erp.tax_rate where tax_key_erp=-2 and tax_group_key = -2 '''
 DWH_NL_CRM_USERS = '''select * from dwh_nl.crm_users'''
 DWH_NL_CRM_PRICEBOOK = '''select * from dwh_nl.price_book'''
-DWH_NL_SPS = '''select * from dwh_nl.sps limit 1000 '''
+DWH_NL_SPS = '''select sps_key, customer_ownership_flag,curr_panel1_wattage,curr_panel2_wattage from dwh_nl.sps '''
+DWH_NL_SPS_FOR_SPS_DAILY = '''select sps_short_num,curr_panel1_wattage,curr_panel2_wattage from dwh_nl.sps '''
+DWH_NL_SPS_DAILY = '''select sps_short_num,curr_panel1_wattage,curr_panel2_wattage,curr_warehouse_bin from dwh_nl.sps_daily 
+where relevance_date = {RELEVANCE_DATE} '''
+DWH_STG_SPS_DAILY_VW = '''select system_id as sps_short_num,bin_name from dwh_stg.stg_sps_daily_vw'''
 DWH_NL_CRM_LEAD = '''select * from dwh_nl.lead'''
 DWH_NL_CONTRACT = '''select contract_key,sales_channel_type from dwh_nl.contract'''
 DWH_NL_CONTRACT_DAILY = '''select contract_key,sales_channel_type,contract_activity_status_cd,
 contract_activity_status from dwh_stg.stg_cntrct_daily '''
-DWH_NL_SPS_DAILY = '''select system_id,brand from dwh_nl.inventory_idu '''
+DWH_NL_INVENTORY_IDU = '''select system_id as sps_short_num,brand,erp_company_name from 
+dwh_stg.stg_sps_daily_inventory_idu '''
 DWH_NL_TENANT = '''select 
 partner_desc,
 partner_key,
@@ -51,6 +56,6 @@ union all select
 `dwh_erp`.`ref_sn_ivory`.`always_on_change_date` AS `always_on_change_date`,
 `dwh_erp`.`ref_sn_ivory`.`refurbished_flag` AS `refurbished_flag`,`dwh_erp`.`ref_sn_ivory`.`calculated_part_name` AS 
 `calculated_part_name`,`dwh_erp`.`ref_sn_ivory`.`part_sub_family_name` AS `part_sub_family_name`, 
-dwh_erp`.`ref_sn_ivory`.`warehouse_key` AS warehouse_key 
+`dwh_erp`.`ref_sn_ivory`.`warehouse_key` AS warehouse_key 
 from 
 `dwh_erp`.`ref_sn_ivory` where (`dwh_erp`.`ref_sn_ivory`.`part_family_name` = 'IDU'); '''

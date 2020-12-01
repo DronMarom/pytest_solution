@@ -1,5 +1,8 @@
-CRM_CONTACT = '''SELECT AccountId,Id,State__c FROM Contact'''
-CRM_USER = '''select Id,ContactId,Name from User'''
+CRM_CONTACT = '''SELECT AccountId,Id,State__c,Sales_Agent_sub_Channel__c
+ FROM Contact'''
+CRM_USER = '''select Id,Customer_Subscription_Method__c,
+Profile_Name__c,
+Name from User'''
 CRM_PRICBOOK2 = '''select Id,Tenant_SIM__c,Ecommerce__c,Generation__c,Sales_Channel__c,Unit_To_Bundle_Combo__c,Type__c,
 Name,
 CreatedDate,
@@ -156,9 +159,11 @@ IsDeleted,
 Agent_Name__c,
 Contact_phone_number_verified__c,
 I_confirm_that_Guarantor_is_approved__c,
-Welcome_Call_Preformed__c,Sub_Channel__c from Lead'''
+Welcome_Call_Preformed__c,Sub_Channel__c,
+Sales_Agent__c
+ from Lead'''
 
-CRM_COMPONENT = '''select Id,Panel_Wattage__c from Component__c'''
+CRM_COMPONENT = '''select Id,Panel_Wattage__c from Component__c where Type__c='Panel' '''
 
 CRM_HPS = '''SELECT Id,
 Partner__c,

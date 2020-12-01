@@ -1,10 +1,12 @@
 from pytest import fixture
+from log import log_file
 from data_base_test.config import Config
 from data_base_test.data_base_connactins import sales_force_connection
 from data_base_test.data_base_connactins import mysql_connaction
 from data_base_test.data_base_connactins import snowflake_connection
 from data_base_test.fixtures_get_data.fixtures_to_crm import *
 from data_base_test.fixtures_get_data.fixtures_to_mysql_snowflake import *
+
 
 # def pytest_addoption(parser):
 #     parser.addoption("--env", action="store",
@@ -32,8 +34,11 @@ def data_config(env='test_env', data_base_type='mysql'):
 
 @fixture(scope='session')
 def get_connaction_to_crm(data_config):
-    sf_details = dict(username=data_config.crm_connaction[0], password=data_config.crm_connaction[1],
-                      security_token=data_config.crm_connaction[2], domain=data_config.crm_connaction[3])
+    # sf_details = dict(username=data_config.crm_connaction[0], password=data_config.crm_connaction[1],
+    #                   security_token=data_config.crm_connaction[2], domain=data_config.crm_connaction[3])
+
+    sf_details = dict(username="bi_etl@lumos-global.com", password="arik123",
+                      security_token="AiyAR5CQe6esB05rxccpePcnC", domain=None)
     salefroce_connection_test_object = sales_force_connection.DataFromSF(**sf_details)
     return salefroce_connection_test_object
 
@@ -52,3 +57,6 @@ def get_object_according_to_data_base_type(data_config):
                                                         data_config.mysql_connactin[0], '',
                                                         data_config.mysql_connactin[3])
         return mysql_conn
+
+
+log_file.delete_log_files()

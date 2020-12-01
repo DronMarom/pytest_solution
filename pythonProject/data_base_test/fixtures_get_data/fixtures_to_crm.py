@@ -35,3 +35,9 @@ def get_data_from_hps(get_connaction_to_crm):
 def get_data_from_component(get_connaction_to_crm):
     crm_component_df = get_connaction_to_crm.get_data_from_salesforce(crm_querys.CRM_COMPONENT)
     return crm_component_df
+
+
+@pytest.fixture(scope='session')
+def get_data_from_crm_lead(get_connaction_to_crm):
+    crm_lead_df = get_connaction_to_crm.get_data_from_salesforce(crm_querys.CRM_LEAD)
+    return crm_lead_df

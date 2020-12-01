@@ -7,7 +7,8 @@ DWH_SPS_NAME = {'Id': 'sps_key',
                 'Payment_Method_Allowed__c': 'allowed_payment_method',
                 'Subtype__c': 'sps_unit_type'
                 }
-DWH_CONTACT_NAME = {'Id': 'contact_key', 'AccountId': 'account_key', 'State__c': 'contact_user_state'}
+DWH_CONTACT_NAME = {'Id': 'contact_key', 'AccountId': 'account_key', 'State__c': 'contact_user_state',
+                    'Sales_Agent_Sub_Channel__c': 'lead_agent_sub_channel'}
 DWH_USER_NAME = {'Id': 'user_key', 'ContactId': 'user_contact_key', 'Name': 'username'}
 DWH_PRICBOOK_NAME = {'Id': 'price_book_key', 'Tenant_SIM__c': 'price_book_tenant', 'Ecommerce__c': 'ecommerce_flag',
                      'Generation__c': 'price_book_generation', 'Sales_Channel__c': 'price_book_sales_channel',
@@ -23,6 +24,7 @@ DWH_PRICBOOK_NAME = {'Id': 'price_book_key', 'Tenant_SIM__c': 'price_book_tenant
                      }
 DWH_RECORDTYPE_NAME = {'Id': 'lead_record_type_id', 'Name': 'lead_record_type_name'}
 DWH_LEAD_NAME = {'Id': 'lead_key',
+                 'Sales_Agent__c': 'lead_agent_contact_key',
                  'Type__c': 'lead_type',
                  'LeadSource': 'lead_source',
                  'Partner__c': 'lead_partner',
