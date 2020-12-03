@@ -22,13 +22,27 @@ def get_data_from_dwh_nl_lead(get_object_according_to_data_base_type, data_confi
     if 'snowflake' in data_config.dwh_nl_data_base:
         connection_to_snowflake = get_object_according_to_data_base_type.get_connection_to_snowflake()
         lead_df = get_object_according_to_data_base_type.run_query(snowflake_querys.DWH_NL_LEAD,
-                                                                      connection_to_snowflake)
+                                                                   connection_to_snowflake)
         lead_df.columns = lead_df.columns.str.strip().str.lower()
 
         return lead_df
     else:
         dwh_nl_lead_df = get_object_according_to_data_base_type.get_connection_to_mysql(dwh_nl_querys.DWH_NL_CRM_LEAD)
         return dwh_nl_lead_df
+
+
+@pytest.fixture(scope='session')
+def get_data_from_dwh_nl_contract(get_object_according_to_data_base_type, data_config):
+    if 'snowflake' in data_config.dwh_nl_data_base:
+        connection_to_snowflake = get_object_according_to_data_base_type.get_connection_to_snowflake()
+        contract_df = get_object_according_to_data_base_type.run_query(snowflake_querys.DWH_NL_CONTRACT,
+                                                                   connection_to_snowflake)
+        contract_df.columns = contract_df.columns.str.strip().str.lower()
+
+        return contract_df
+    else:
+        dwh_nl_contract_df = get_object_according_to_data_base_type.get_connection_to_mysql(dwh_nl_querys.DWH_NL_CONTRACT)
+        return dwh_nl_contract_df
 
 
 @pytest.fixture(scope='session')

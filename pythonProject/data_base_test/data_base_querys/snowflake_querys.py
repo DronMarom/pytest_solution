@@ -2,4 +2,5 @@ CONTACT_TABLE_FOR_CRM_USER_TEST = '''SELECT contact_key,contact_user_state from 
 DWH_NL_CRM_PRICEBOOK = '''select * from QA.DWH_NL.PRICE_BOOK'''
 DWH_NL_SPS = '''select * from QA.DWH_NL.SPS'''
 DWH_NL_LEAD = '''select * from QA.DWH_NL.LEAD'''
+DWH_NL_CONTRACT = '''select * from QA.DWH_NL.CONTRACT'''
 DWH_NL_CRM_USERS = '''select * from QA.DWH_NL.crm_users'''

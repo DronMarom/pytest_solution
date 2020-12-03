@@ -60,3 +60,4 @@ DWH_LEAD_NAME = {'Id': 'lead_key',
                  'Welcome_Call_Preformed__c': 'welocome_call_performed_flag',
                  'Sub_Channel__c': 'lead_sub_channel'
                  }
+DWH_INSTALLATION_NAME = {'Id': 'contract_key', 'Opportunity__c': 'contract_opportunity_key'}

@@ -53,8 +53,10 @@ class crm_lead_Test:
         get_data_from_crm_lead_local = pd.merge(get_data_from_crm_lead_local, get_data_from_crm_contact_local,
                                                 how='left', on='lead_agent_contact_key')
         del get_data_from_crm_lead_local['lead_agent_contact_key']
+        get_data_from_crm_lead_local = get_data_from_crm_lead_local.fillna('-9')
         data_config.empty_data_frame = pd.merge(data_config.empty_data_frame, get_data_from_crm_lead_local, how='left',
                                                 on='lead_key')
+
         get_data_from_dwh_nl_lead_local = get_data_from_dwh_nl_lead[['lead_key', 'lead_agent_sub_channel']]
         comper_result = comper_beween_data_frame.comper_data_frame_old_and_new_data_frame(
             get_data_from_crm_lead_local,
@@ -72,6 +74,7 @@ class crm_lead_Test:
             'PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0]
         data_config.empty_data_frame = pd.merge(data_config.empty_data_frame, get_data_from_crm_lead, how='left',
                                                 on='lead_key')
+        data_config.empty_data_frame = data_config.empty_data_frame.fillna('-9')
         comper_result = comper_beween_data_frame.comper_data_frame_old_and_new_data_frame(
             data_config.empty_data_frame,
             get_data_from_dwh_nl_lead,

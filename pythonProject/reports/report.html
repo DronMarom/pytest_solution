@@ -428,7 +428,7 @@ function filter_table(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 19-Nov-2020 at 11:13:11 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.0.0</p>
+    <p>Report generated on 03-Dec-2020 at 16:33:45 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.0.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -436,7 +436,7 @@ function filter_table(elem) { // eslint-disable-line no-unused-vars
         <td>{"pluggy": "0.13.1", "py": "1.9.0", "pytest": "6.1.2"}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>Linux-5.4.0-53-generic-x86_64-with-glibc2.29</td></tr>
+        <td>Linux-5.4.0-56-generic-x86_64-with-glibc2.29</td></tr>
       <tr>
         <td>Plugins</td>
         <td>{"html": "3.0.0", "metadata": "1.10.0"}</td></tr>
@@ -444,8 +444,8 @@ function filter_table(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.8.5</td></tr></table>
     <h2>Summary</h2>
-    <p>8 tests ran in 50.12 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">8 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>1 tests ran in 5.78 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -456,75 +456,60 @@ function filter_table(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
+      <tbody class="passed results-table-row">
         <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">DataBaseTest/tests/crm_tables/test_crm_pricebook.py::price_book_Test::test_crm_price_book_ecommerce_flag</td>
-          <td class="col-duration">2.79</td>
+          <td class="col-result">Passed</td>
+          <td class="col-name">data_base_test/tests/dwh_table/test_dwh_nl_contract.py::contract_Test::test_sales_agent_sub_channel_and_contact_key</td>
+          <td class="col-duration">5.20</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">crm_tables/test_crm_pricebook.py:27: in test_crm_price_book_ecommerce_flag<br/>    assert 1 == comper_beween_data_frame.is_test_failed(comper_result, crm_ecommerce_flag_df,<br/><span class="error">E   assert 1 == 0</span><br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">DataBaseTest/tests/crm_tables/test_crm_pricebook.py::price_book_Test::test_crm_price_book_created_user_name</td>
-          <td class="col-duration">0.20</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">crm_tables/test_crm_pricebook.py:47: in test_crm_price_book_created_user_name<br/>    assert 1 == comper_beween_data_frame.is_test_failed(comper_result, crm_created_user_name_df,<br/><span class="error">E   assert 1 == 0</span><br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">DataBaseTest/tests/crm_tables/test_crm_pricebook.py::price_book_Test::test_crm_price_book_updated_user_name</td>
-          <td class="col-duration">0.15</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">crm_tables/test_crm_pricebook.py:67: in test_crm_price_book_updated_user_name<br/>    assert 1 == comper_beween_data_frame.is_test_failed(comper_result, crm_created_user_name_df,<br/><span class="error">E   assert 1 == 0</span><br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">DataBaseTest/tests/crm_tables/test_crm_pricebook.py::price_book_Test::test_crm_price_book_full_table</td>
-          <td class="col-duration">0.27</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">crm_tables/test_crm_pricebook.py:80: in test_crm_price_book_full_table<br/>    comper_beween_data_frame.write_test_result_to_file(data_config.log_directory[&#x27;crm_table&#x27;] + &quot;/price_book&quot;,<br/>../helper_fanctions/comper_beween_data_frame.py:25: in write_test_result_to_file<br/>    with open(file_name + &#x27;_&#x27; + date_time + &#x27;result.txt&#x27;, &#x27;a&#x27;) as resultSummary:<br/><span class="error">E   FileNotFoundError: [Errno 2] No such file or directory: &#x27;/home/doron/PycharmProjects/pythonProject/DataBaseTest/crm_tables/crm_result_directory/price_book_11-19-2020,11:12:25result.txt&#x27;</span><br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">DataBaseTest/tests/crm_tables/test_crm_sps.py::crm_sps_Test::test_sps_customer_ownership_flag</td>
-          <td class="col-duration">2.79</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">/home/doron/PycharmProjects/pythonProject/DataBaseTest/crm_tables/test_crm_sps.py:23: in test_sps_customer_ownership_flag<br/>    ???<br/><span class="error">E   assert 1 == 0</span><br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">DataBaseTest/tests/crm_tables/test_crm_sps.py::crm_sps_Test::test_sps_curr_panel1_wattage</td>
-          <td class="col-duration">2.26</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">/home/doron/PycharmProjects/pythonProject/DataBaseTest/crm_tables/test_crm_sps.py:37: in test_sps_curr_panel1_wattage<br/>    ???<br/>../../venv/lib/python3.8/site-packages/pandas/core/frame.py:2908: in __getitem__<br/>    indexer = self.loc._get_listlike_indexer(key, axis=1, raise_missing=True)[1]<br/>../../venv/lib/python3.8/site-packages/pandas/core/indexing.py:1254: in _get_listlike_indexer<br/>    self._validate_read_indexer(keyarr, indexer, axis, raise_missing=raise_missing)<br/>../../venv/lib/python3.8/site-packages/pandas/core/indexing.py:1304: in _validate_read_indexer<br/>    raise KeyError(f&quot;{not_found} not in index&quot;)<br/><span class="error">E   KeyError: &quot;[&#x27;curr_panel1_wattage&#x27;] not in index&quot;</span><br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">DataBaseTest/tests/crm_tables/test_crm_sps.py::crm_sps_Test::test_sps_curr_panel2_wattage</td>
-          <td class="col-duration">0.04</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">/home/doron/PycharmProjects/pythonProject/DataBaseTest/crm_tables/test_crm_sps.py:56: in test_sps_curr_panel2_wattage<br/>    ???<br/>../../venv/lib/python3.8/site-packages/pandas/core/frame.py:2908: in __getitem__<br/>    indexer = self.loc._get_listlike_indexer(key, axis=1, raise_missing=True)[1]<br/>../../venv/lib/python3.8/site-packages/pandas/core/indexing.py:1254: in _get_listlike_indexer<br/>    self._validate_read_indexer(keyarr, indexer, axis, raise_missing=raise_missing)<br/>../../venv/lib/python3.8/site-packages/pandas/core/indexing.py:1304: in _validate_read_indexer<br/>    raise KeyError(f&quot;{not_found} not in index&quot;)<br/><span class="error">E   KeyError: &quot;[&#x27;curr_panel2_wattage&#x27;] not in index&quot;</span><br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">DataBaseTest/tests/crm_tables/test_crm_sps.py::crm_sps_Test::test_sps_full_table</td>
-          <td class="col-duration">0.33</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">/home/doron/PycharmProjects/pythonProject/DataBaseTest/crm_tables/test_crm_sps.py:73: in test_sps_full_table<br/>    ???<br/><span class="error">E   assert 1 == 0</span><br/></div></td></tr></tbody></table></body></html>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>ERROR    test_sales_agent_sub_channel_and_contact_key:test_dwh_nl_contract.py:49 DataComPy Comparison
+--------------------
+
+DataFrame Summary
+-----------------
+
+  DataFrame  Columns  Rows
+0       df1        5   725
+1       df2        3   725
+
+Column Summary
+--------------
+
+Number of columns in common: 3
+Number of columns in df1 but not in df2: 2
+Number of columns in df2 but not in df1: 0
+
+Row Summary
+-----------
+
+Matched on: contract_key
+Any duplicates on match values: No
+Absolute Tolerance: 0
+Relative Tolerance: 0
+Number of rows in common: 724
+Number of rows in df1 but not in df2: 1
+Number of rows in df2 but not in df1: 1
+
+Number of rows with some compared columns unequal: 0
+Number of rows with all compared columns equal: 724
+
+Column Comparison
+-----------------
+
+Number of columns compared with some values unequal: 0
+Number of columns compared with all values equal: 3
+Total number of values which compare unequal: 0
+
+Sample Rows Only in df1 (First 10 Columns)
+------------------------------------------
+
+           contract_key lead_converted_opportunity_key            lead_key sales_agent_contact_key    sales_agent_sub_channel
+709  a0D1l0000026dvvEAA             0061l00000LifAhAAJ  00Q1l000005RekBEAS      0031l00000gGjjGAAS  NG Direct - LDP CANVASSER
+
+Sample Rows Only in df2 (First 10 Columns)
+------------------------------------------
+
+    contract_key sales_agent_contact_key sales_agent_sub_channel
+725           -9                    None                    None<br/></div></td></tr></tbody></table></body></html>

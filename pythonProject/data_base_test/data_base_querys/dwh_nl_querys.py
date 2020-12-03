@@ -19,7 +19,7 @@ DWH_NL_SPS_DAILY = '''select sps_short_num,curr_panel1_wattage,curr_panel2_watta
 where relevance_date = {RELEVANCE_DATE} '''
 DWH_STG_SPS_DAILY_VW = '''select system_id as sps_short_num,bin_name from dwh_stg.stg_sps_daily_vw'''
 DWH_NL_CRM_LEAD = '''select * from dwh_nl.lead'''
-DWH_NL_CONTRACT = '''select contract_key,sales_channel_type from dwh_nl.contract'''
+DWH_NL_CONTRACT = '''select * from dwh_nl.contract'''
 DWH_NL_CONTRACT_DAILY = '''select contract_key,sales_channel_type,contract_activity_status_cd,
 contract_activity_status from dwh_stg.stg_cntrct_daily '''
 DWH_NL_INVENTORY_IDU = '''select system_id as sps_short_num,brand,erp_company_name from 

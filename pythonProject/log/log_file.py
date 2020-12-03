@@ -9,8 +9,8 @@ def setup_logger():
     if os.environ.get('TEST_NAME'):
         formatter = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s')
         level = logging.INFO
-        log_file_path = f"{Path(__file__).cwd().parent.parent.parent}/log/"
-        log_file_path = f"{Path(__file__).cwd()}/log/"
+        log_file_path = f"{Path(__file__).cwd().parent.parent}/log/"
+        # log_file_path = f"{Path(__file__).cwd()}/log/"
         file_name = f"{log_file_path}{os.environ.get('TEST_NAME')}.log"
         handler = logging.FileHandler(file_name)
         handler.setFormatter(formatter)
@@ -22,7 +22,7 @@ def setup_logger():
 
 
 def delete_log_files():
-    log_files_path = f"{Path(__file__).cwd()}/log/"
+    log_files_path = f"{Path(__file__).cwd().parent.parent}/log/"
     files_list = [f for f in os.listdir(log_files_path) if f.endswith(".log")]
     for f in files_list:
         os.remove(os.path.join(log_files_path, f))

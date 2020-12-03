@@ -34,11 +34,11 @@ def data_config(env='test_env', data_base_type='mysql'):
 
 @fixture(scope='session')
 def get_connaction_to_crm(data_config):
-    # sf_details = dict(username=data_config.crm_connaction[0], password=data_config.crm_connaction[1],
-    #                   security_token=data_config.crm_connaction[2], domain=data_config.crm_connaction[3])
+    sf_details = dict(username=data_config.crm_connaction[0], password=data_config.crm_connaction[1],
+                      security_token=data_config.crm_connaction[2], domain=data_config.crm_connaction[3])
 
-    sf_details = dict(username="bi_etl@lumos-global.com", password="arik123",
-                      security_token="AiyAR5CQe6esB05rxccpePcnC", domain=None)
+    # sf_details = dict(username="bi_etl@lumos-global.com", password="arik123",
+    #                   security_token="AiyAR5CQe6esB05rxccpePcnC", domain=None)
     salefroce_connection_test_object = sales_force_connection.DataFromSF(**sf_details)
     return salefroce_connection_test_object
 

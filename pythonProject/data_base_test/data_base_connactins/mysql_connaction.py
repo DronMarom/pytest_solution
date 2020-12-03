@@ -20,10 +20,10 @@ class ConnectionToMySql:
 
     def get_connection_to_mysql(self, sql_query):
 
-        db = pymysql.connect(self.host, self.user, self.password, self.db, self.port)
+
         try:
             # Execute the SQL command
-
+            db = pymysql.connect(self.host, self.user, self.password, self.db, self.port)
             df = pd.read_sql_query(sql_query, db)
             db.close()
             return df

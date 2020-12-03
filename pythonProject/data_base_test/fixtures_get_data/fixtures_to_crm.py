@@ -32,6 +32,14 @@ def get_data_from_hps(get_connaction_to_crm):
 
 
 @pytest.fixture(scope='session')
+def get_data_from_installation(get_connaction_to_crm):
+    crm_installation_df = get_connaction_to_crm.get_data_from_salesforce(crm_querys.CRM_INSTALLATION_C)
+    crm_installation_df = crm_installation_df.rename(
+        columns=convert_crm_column_name_to_dwh_nl_name.DWH_INSTALLATION_NAME)
+    return crm_installation_df
+
+
+@pytest.fixture(scope='session')
 def get_data_from_component(get_connaction_to_crm):
     crm_component_df = get_connaction_to_crm.get_data_from_salesforce(crm_querys.CRM_COMPONENT)
     return crm_component_df
@@ -40,4 +48,5 @@ def get_data_from_component(get_connaction_to_crm):
 @pytest.fixture(scope='session')
 def get_data_from_crm_lead(get_connaction_to_crm):
     crm_lead_df = get_connaction_to_crm.get_data_from_salesforce(crm_querys.CRM_LEAD)
+    crm_lead_df = crm_lead_df.rename(columns=convert_crm_column_name_to_dwh_nl_name.DWH_LEAD_NAME)
     return crm_lead_df

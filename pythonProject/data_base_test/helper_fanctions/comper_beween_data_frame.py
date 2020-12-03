@@ -29,7 +29,7 @@ def write_test_result_to_file(file_name, result):
 def is_test_failed(test_result, data_frame_local, data_frame_production):
     number_of_uneqale_rows = test_result.split("Number of rows with some compared columns unequal: ")[1]
     number_of_uneqale_rows = number_of_uneqale_rows[0]
-    if data_frame_local.shape[0] == data_frame_production.shape[0] and number_of_uneqale_rows == 0:
+    if data_frame_local.shape[0] == data_frame_production.shape[0] and int(number_of_uneqale_rows) == 0:
         return 1
     else:
         return 0
