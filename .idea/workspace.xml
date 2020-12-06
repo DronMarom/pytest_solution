@@ -19,14 +19,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26f1177b-fbc5-4b02-8851-bcbdb3ea0d7d" name="Default Changelist" comment="" />
+    <list default="true" id="26f1177b-fbc5-4b02-8851-bcbdb3ea0d7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pythonProject/data_base_test/tests/dwh_table/test_dwh_nl_contract.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonProject/data_base_test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonProject/data_base_test/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonProject/data_base_test/fixtures_get_data/fixtures_to_crm.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonProject/data_base_test/fixtures_get_data/fixtures_to_crm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonProject/data_base_test/fixtures_get_data/fixtures_to_mysql_snowflake.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonProject/data_base_test/fixtures_get_data/fixtures_to_mysql_snowflake.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonProject/data_base_test/tests/crm_tables/test_crm_lead.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonProject/data_base_test/tests/crm_tables/test_crm_lead.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonProject/data_base_test/tests/crm_tables/test_crm_pricebook.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonProject/data_base_test/tests/crm_tables/test_crm_pricebook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonProject/data_base_test/tests/crm_tables/test_crm_sps.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonProject/data_base_test/tests/crm_tables/test_crm_sps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonProject/data_base_test/tests/crm_tables/test_crm_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonProject/data_base_test/tests/crm_tables/test_crm_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonProject/data_base_test/tests/dwh_table/test_sps_daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonProject/data_base_test/tests/dwh_table/test_sps_daily.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/pytest_solution" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kVulEmucoy6MHnQn5u9Vz5qm4O" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -36,7 +55,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pythonProject/data_base_test" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pythonProject" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -59,5 +85,32 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="168" y="159" width="1682" height="710" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607010731791">
+      <screen x="72" y="27" width="1848" height="948" />
+    </state>
+    <state x="168" y="159" width="1682" height="710" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.948@72.27.1848.948" timestamp="1607010731791" />
+    <state x="779" y="222" width="424" height="591" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1607010427298">
+      <screen x="72" y="27" width="1848" height="948" />
+    </state>
+    <state x="779" y="222" width="424" height="591" key="#com.intellij.ide.macro.MacrosDialog/72.27.1848.948@72.27.1848.948" timestamp="1607010427298" />
+    <state x="172" y="127" width="1648" height="748" key="DiffContextDialog" timestamp="1607010008276">
+      <screen x="72" y="27" width="1848" height="948" />
+    </state>
+    <state x="172" y="127" width="1648" height="748" key="DiffContextDialog/72.27.1848.948@72.27.1848.948" timestamp="1607010008276" />
+    <state x="779" y="272" width="424" height="491" key="FileChooserDialogImpl" timestamp="1607010393464">
+      <screen x="72" y="27" width="1848" height="948" />
+    </state>
+    <state x="779" y="272" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.948@72.27.1848.948" timestamp="1607010393464" />
+    <state x="485" y="136" width="1022" height="737" key="SettingsEditor" timestamp="1607009675644">
+      <screen x="72" y="27" width="1848" height="948" />
+    </state>
+    <state x="485" y="136" width="1022" height="737" key="SettingsEditor/72.27.1848.948@72.27.1848.948" timestamp="1607009675644" />
+    <state x="172" y="127" width="1648" height="748" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1607010008277">
+      <screen x="72" y="27" width="1848" height="948" />
+    </state>
+    <state x="172" y="127" width="1648" height="748" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/72.27.1848.948@72.27.1848.948" timestamp="1607010008277" />
   </component>
 </project>

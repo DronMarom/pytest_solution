@@ -1,11 +1,11 @@
 from pytest import fixture
 from log import log_file
 from data_base_test.config import Config
-from data_base_test.data_base_connactins import sales_force_connection
-from data_base_test.data_base_connactins import mysql_connaction
-from data_base_test.data_base_connactins import snowflake_connection
+from data_base_test.data_base_connactins import mysql_connaction, snowflake_connection, \
+    sales_force_connection
 from data_base_test.fixtures_get_data.fixtures_to_crm import *
 from data_base_test.fixtures_get_data.fixtures_to_mysql_snowflake import *
+
 
 
 # def pytest_addoption(parser):
@@ -59,4 +59,4 @@ def get_object_according_to_data_base_type(data_config):
         return mysql_conn
 
 
-log_file.delete_log_files()
+# log_file.delete_log_files()
