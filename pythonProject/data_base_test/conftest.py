@@ -59,4 +59,4 @@ def get_object_according_to_data_base_type(data_config):
         return mysql_conn
 
 
-# log_file.delete_log_files()
+log_file.delete_log_files()
