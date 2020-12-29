@@ -11,5 +11,7 @@ class Config:
         self.dwh_nl_data_base = data_base_type
         self.log_directory = {"crm_table": "/home/doron/PycharmProjects/pythonProject/data_base_test/crm_tables"
                                            "/crm_result_directory"}
+        self.snowflake_connaction_for_data_lake = {"test_env": ["DORON_M", "Qwerty12", "lumos.eu-west-1", "LOAD_WH",
+                                                                "QA", "CRM_DATA"]}[env]
 
         self.empty_data_frame = pd.DataFrame()

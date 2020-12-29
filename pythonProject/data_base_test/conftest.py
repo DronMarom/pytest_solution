@@ -7,7 +7,6 @@ from data_base_test.fixtures_get_data.fixtures_to_crm import *
 from data_base_test.fixtures_get_data.fixtures_to_mysql_snowflake import *
 
 
-
 # def pytest_addoption(parser):
 #     parser.addoption("--env", action="store",
 #                      help="Data env")
@@ -58,5 +57,13 @@ def get_object_according_to_data_base_type(data_config):
                                                         data_config.mysql_connactin[3])
         return mysql_conn
 
-
-log_file.delete_log_files()
+@fixture(scope='session')
+def get_connection_to_snowflake_for_data_lake(data_config):
+    snowflake_obj_for_data_lake = snowflake_connection.SnowFlakeConnection(data_config.snowflake_connaction_for_data_lake[0],
+                                                             data_config.snowflake_connaction_for_data_lake[1],
+                                                             data_config.snowflake_connaction_for_data_lake[2],
+                                                             data_config.snowflake_connaction_for_data_lake[3],
+                                                             data_config.snowflake_connaction_for_data_lake[4],
+                                                            data_config.snowflake_connaction_for_data_lake[5])
+    return snowflake_obj_for_data_lake
+# log_file.delete_log_files()
