@@ -8,26 +8,27 @@ class DataFromSF:
     sf = None
 
     def __init__(self, **SFENV):
-        for i in range(0, 5):
+
             try:
                 self.sf = Salesforce(**SFENV)
             except:
-                time.sleep(20)
-                continue
-            break
+                print ('get connection fialed')
 
-    def get_data_from_salesforce(self, sql_query):
+    def get_data_from_salesforce(self, sql_query, write_result_to_log):
         for i in range(0, 5):
             try:
                 get_records_from_salesforce = self.sf.query_all(sql_query)
-            except:
+            except Exception as e:
                 time.sleep(20)
+                if i == 4:
+                    write_result_to_log.error(f'Error when get data from CRM Error message : {e.args}')
                 continue
             break
 
         records = get_records_from_salesforce['records']
         df1 = pd.DataFrame(records)
-        del df1['attributes']
+        if df1.shape[0] != 0:
+            del df1['attributes']
         return df1
 
     def update_salesforce_rows(self, salesforce_id, tableName, **kwargs):

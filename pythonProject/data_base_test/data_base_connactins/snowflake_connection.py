@@ -52,7 +52,16 @@ class SnowFlakeConnection:
             cursor = db.cursor()
             cursor.execute(sql_query)
         except Exception as e:
-            error_message = e.raw_msg
+            error_message = e.args
+            return error_message
+
+    @staticmethod
+    def update_columns_in_snowflake_db(sql_query, db):
+        try:
+            cursor = db.cursor()
+            cursor.execute(sql_query)
+        except Exception as e:
+            error_message = e.args
             return error_message
 
     @staticmethod

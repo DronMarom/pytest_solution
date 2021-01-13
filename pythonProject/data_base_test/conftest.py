@@ -66,4 +66,7 @@ def get_connection_to_snowflake_for_data_lake(data_config):
                                                              data_config.snowflake_connaction_for_data_lake[4],
                                                             data_config.snowflake_connaction_for_data_lake[5])
     return snowflake_obj_for_data_lake
-# log_file.delete_log_files()
+# log_file.create_new_archive_folder()
+# log_file.move_logs_to_archive()
+log_file.delete_log_files()
+log_file.delete_csv_files()
