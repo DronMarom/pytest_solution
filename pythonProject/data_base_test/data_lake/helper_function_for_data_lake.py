@@ -2,7 +2,7 @@ import os
 import threading
 import pandas as pd
 import datetime
-
+import json
 from data_base_test.helper_fanctions import comper_beween_data_frame
 
 
@@ -257,9 +257,9 @@ def save_current_data_frame_to_csv(object_name, crm_data_df, file_name, header, 
     file_path = os.path.abspath(file_name)
     try:
         crm_data_df.to_csv(file_path, index=False, header=header)
+        return file_path
     except Exception as e:
         write_result_to_log.error(f'Error for object {object_name} CSV file not created : {e.args}')
-
 
 
 def create_new_table_in_snwflake(field_list, object_name, get_connection_to_snowflake_for_data_lake,
@@ -290,7 +290,6 @@ def upload_the_csv_to_snowflake_stage_and_insert_to_relevant_table(get_connectio
                                                                               connection_to_snowflake,
                                                                               write_result_to_log)
 
-
         write_result_to_log.info(f'Finished to upload {object_name} scv to snowflake stage ')
         copy_csv_from_stage_to_snowflake_table = f'''copy into {object_name} file_format=(TYPE=csv field_delimiter=',' skip_header=0 FIELD_OPTIONALLY_ENCLOSED_BY = '"')'''
         get_connection_to_snowflake_for_data_lake.run_command_in_snowflake_db(copy_csv_from_stage_to_snowflake_table,
@@ -305,3 +304,18 @@ def upload_the_csv_to_snowflake_stage_and_insert_to_relevant_table(get_connectio
         lock.release()
 
 
+def save_json_file_for_columns_that_exist_in_snownflake_and_not_in_crm(object_name, columns_list):
+    dictionary_data = {object_name: columns_list}
+    with open(f'{object_name}.json', "w") as file:
+        json.dump(dictionary_data, file)
+
+
+def read_json_file_for_columns_that_exist_in_snownflake_and_not_in_crm(object_name):
+    with open(f'{object_name}.json', "r") as file:
+        output = json.load(file)
+        return output
+
+
+def new_deleted_column_in_snowflake(old_list, new_list):
+    result = all(elem in old_list for elem in new_list)
+    return result

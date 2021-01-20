@@ -25,7 +25,6 @@ def test_insert_new_data_to_snowflake_crm_table(get_connection_to_snowflake_for_
     list_of_crm_table = object_from_snowflake_crm_management_table_data_lake['crm_table_name']
 
     def louad_data_to_snowflake(crm_table):
-
         object_name = crm_table
         columns_only_in_snowflake = []
         schema_env = 'QA.CRM_DATA.'
@@ -37,9 +36,14 @@ def test_insert_new_data_to_snowflake_crm_table(get_connection_to_snowflake_for_
         field_list, columns_list = helper_function_for_data_lake.map_columns(mata_data,
                                                                              crm_table_decision['is_new_table'][0])
         if crm_table_decision['is_new_table'][0]:
+            first_columns_only_in_snowflake=[]
             helper_function_for_data_lake.create_new_table_in_snwflake(field_list, object_name,
                                                                        get_connection_to_snowflake_for_data_lake,
                                                                        write_result_to_log)
+            helper_function_for_data_lake.save_json_file_for_columns_that_exist_in_snownflake_and_not_in_crm(
+                object_name,
+                first_columns_only_in_snowflake)
+
             del columns_list[0]
         else:
             query = '''select * from QA.CRM_DATA.{} limit 1 '''.format(object_name)
@@ -68,7 +72,14 @@ def test_insert_new_data_to_snowflake_crm_table(get_connection_to_snowflake_for_
                                                                                       , write_result_to_log,
                                                                                       columns_only_in_snowflake)
         del crm_data_df['ROW_INSERT_DATE']
-        if crm_table_decision['is_new_table'][0] == True or len(columns_only_in_snowflake) > 0:
+        columns_only_in_snowflake_old = helper_function_for_data_lake.read_json_file_for_columns_that_exist_in_snownflake_and_not_in_crm(
+            object_name)
+        is_new_delete_column = helper_function_for_data_lake.new_deleted_column_in_snowflake(columns_only_in_snowflake_old[object_name],columns_only_in_snowflake)
+
+        if crm_table_decision['is_new_table'][0] == True or is_new_delete_column==False:
+            helper_function_for_data_lake.save_json_file_for_columns_that_exist_in_snownflake_and_not_in_crm(
+                object_name,
+                columns_only_in_snowflake)
             file_name = f"{object_name}_last_full_data_frame.csv"
             header = True
             helper_function_for_data_lake.save_current_data_frame_to_csv(object_name, crm_data_df, file_name,
@@ -76,7 +87,7 @@ def test_insert_new_data_to_snowflake_crm_table(get_connection_to_snowflake_for_
                                                                          write_result_to_log)
 
         if (crm_table_decision['is_new_table'][0] == False) and (
-                crm_table_decision['incremental_load'][0] == True) and (len(columns_only_in_snowflake) == 0):
+                crm_table_decision['incremental_load'][0] == True) and (is_new_delete_column==True):
             file_name = f"{object_name}_last_full_data_frame.csv"
             header = True
             temp_crm_data_df = crm_data_df
