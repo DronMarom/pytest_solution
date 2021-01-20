@@ -69,4 +69,4 @@ def get_connection_to_snowflake_for_data_lake(data_config):
 # log_file.create_new_archive_folder()
 # log_file.move_logs_to_archive()
 log_file.delete_log_files()
-log_file.delete_csv_files()
+# log_file.delete_csv_files()
