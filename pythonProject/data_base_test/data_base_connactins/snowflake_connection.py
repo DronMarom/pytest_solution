@@ -34,6 +34,7 @@ class SnowFlakeConnection:
         except TypeError:
 
             print(TypeError)
+            raise SystemExit
 
 
     def run_query(self, sql_query, db):
@@ -47,13 +48,14 @@ class SnowFlakeConnection:
 
 
     @staticmethod
-    def add_columns_to_snowflake_db(sql_query, db):
+    def run_command_in_snowflake_db(sql_query, db, write_result_to_log):
         try:
             cursor = db.cursor()
             cursor.execute(sql_query)
         except Exception as e:
             error_message = e.args
-            return error_message
+            write_result_to_log.error(f'failed to add new column to snowflake table {error_message}')
+
 
     @staticmethod
     def update_columns_in_snowflake_db(sql_query, db):
